@@ -1,17 +1,14 @@
 from flask import Flask, render_template, redirect, url_for, flash
-from forms.form import ContactForm
+from tools.form import ContactForm
+from tools.data import fullSend
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'you-will-never-guess'
 
 
 @app.route('/')
 def homepage():
-
-    title = "Epic Tutorials"
-    paragraph = ["wow I am learning so much great stuff!wow I am learning so much great stuff!wow I am learning so much great stuff!wow I am learning so much great stuff!","wow I am learning so much great stuff!wow I am learning so much great stuff!wow I am learning so much great stuff!wow I am learning so much great stuff!wow I am learning so much great stuff!wow I am learning so much great stuff!wow I am learning so much great stuff!wow I am learning so much great stuff!wow I am learning so much great stuff!"]
-
     try:
-        return render_template("index.html", title = title, paragraph=paragraph)
+        return render_template("index.html")
     except Exception(e):
         return str(e)
 
@@ -38,13 +35,8 @@ def homePage():
 
 @app.route('/subteam.html')
 def subteamPage():
-
-    title = "About this site"
-    paragraph = ["blah blah blah memememememmeme blah blah memememe"]
-
-    pageType = 'about'
-
-    return render_template("subteam.html", title=title, paragraph=paragraph, pageType=pageType)
+    teams = fullSend()
+    return render_template("subteam.html", teams=teams)
 
 @app.route('/contact.html', methods=['get', 'post'])
 def contactPage():
