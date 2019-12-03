@@ -14,14 +14,8 @@ def homepage():
 
 @app.route('/about.html')
 def aboutPage():
-
-    title = "About VIP Humor Genome"
-    paragraph = ["blah blah blah memememememmeme blah blah memememe"]
-
-    pageType = 'about'
-
-    return render_template("about.html", title=title, paragraph=paragraph, pageType=pageType)
-
+    
+    return redirect(url_for('homepage'))
 
 @app.route('/index.html')
 def homePage():
