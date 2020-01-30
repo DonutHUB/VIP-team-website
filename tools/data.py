@@ -3,8 +3,8 @@ from pprint import pprint
 
 def fullSend():
     connection = MongoClient()
-    db = connection.VIP
-    collection = db.subteams
+    db = connection.SubTeams
+    collection = db.SubTeamData
     data = collection.find({})
     returnable = []
     for i, d in enumerate(data):
