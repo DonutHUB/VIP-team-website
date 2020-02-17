@@ -1,5 +1,5 @@
 # VIP-team-website
-This contains the files to create website that explains our VIP's team.
+This contains the files to create website that explains our Georgia Tech VIP team, Humor Genome.
 
 # For first run:
 * Make sure Mongo DB is installed *
