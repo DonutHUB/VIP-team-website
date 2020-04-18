@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, flash
 from tools.form import ContactForm
 from tools.data import fullSend
-from tools.display import displayImage, displayText, displayImage
+from tools.display import displayImage, displayText, displayURL
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'you-will-never-guess'
 
