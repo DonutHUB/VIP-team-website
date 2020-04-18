@@ -40,6 +40,9 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="display.html">Joke Display</a>
+            </li>
             <li class="nav-item active px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="submission.html">Joke Submission</a>
             </li>
@@ -70,6 +73,7 @@
           <button id='Image-btn' onclick="display('Image')">Image</button>
         </div>
         <div class='submit' id='URL' style='display:none'>
+          <br />
           <h6>URL</h6>
           <input type="text">
           <h6>Description</h6>
@@ -91,10 +95,17 @@
           <input type="radio" id="OffensiveNO">
           <label for="OffensiveNO">NO</label>
           <br />
-          <input type="submit">
+          <input type="submit" value="Submit">
         </div>
       </div>
     </section>
+
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; Georgia Tech Humor Genome 2020</p>
+      </div>
+    </footer>
+
     <script>
       function display(type) {
         var showType = document.getElementById(type);
@@ -102,21 +113,10 @@
         submitDivs[0].style.display = "none";
         submitDivs[1].style.display = "none";
         submitDivs[2].style.display = "none";
-        println(submitDivs[0])
         showType.style.display = "block";
         var finish = document.getElementById("finish");
         finish.style.display = "block";
       }
-
-     //  function WriteToFile(style) {
-     //    set fso = CreateObject("Scripting.FileSystemObject");
-     //    set s = fso.CreateTextFile("C:\test.txt", True);
-     //    s.writeline(document.getElementById(type).input1.value);
-     //    s.writeline(document.getElementById(type).input2.value);
-     //    s.writeline(document.getElementById(type).input3.value);
-     //    s.Close();
-     // }
-
     </script>
   </body>
 </html>
