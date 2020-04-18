@@ -281,3 +281,25 @@ p {
  clear: both;
  display: table;
 }
+
+.btn-submission {
+ width: 100%;
+}
+
+.btn-submission button {
+ background-color: rgba(47, 23, 15);
+ border: 1px solid brown;
+ color: #e6a756;
+ padding: 10px 24px;
+ cursor: pointer;
+ float: left;
+ width: 33%;
+}
+
+.btn-submission button:not(:last-child) {
+ border-right: none;
+}
+
+.btn-submission button:hover {
+ background-color: rgba(40, 20, 10);
+}

@@ -14,7 +14,7 @@ def homepage():
 
 @app.route('/about.html')
 def aboutPage():
-    
+
     return redirect(url_for('homepage'))
 
 @app.route('/index.html')
@@ -44,6 +44,10 @@ def contactPage():
         print((first, last, email, body))
         return redirect(url_for('contactPage'))
     return render_template("contact.html", form=form)
+
+@app.route('/submission')
+def submissionPage():
+    return render_template("submission.html")
 
 if __name__ == "__main__":
 	app.run(debug = True, host='0.0.0.0', port=8080, passthrough_errors=True)

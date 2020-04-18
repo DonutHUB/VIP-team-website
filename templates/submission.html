@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-widh, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>VIP Humor Genome - Joke Submission Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/business-casual.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">VIP Humor Genome Team</span>
+      <span class="site-heading-lower">Web-Dev Team</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="index.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="subteam.html">Subteams</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-section cta">
+      <div class="container" id="submission">
+        <h2 id="submission">Joke Submission</h2>
+        <br/>
+        <br/>
+        <h6>Title</h6>
+        <input type="text">
+        <br />
+        <br />
+        <h6>Submission Type</h6>
+        <div class="btn-submission">
+          <button id='URL-btn' onclick="display('URL')">URL</button>
+          <button id='Text-btn' onclick="display('Text')">Text</button>
+          <button id='Image-btn' onclick="display('Image')">Image</button>
+        </div>
+        <br />
+        <div class='submit' id='URL' style='display:none'>
+          <h6>URL</h6>
+          <input type="text">
+          <br />
+          <br />
+          <h6>Description</h6>
+          <textarea></textarea>
+        </div>
+        <div class='submit' id='Text' style='display:none'>
+          <h6>Text</h6>
+          <textarea></textarea>
+        </div>
+        <div class='submit' id='Image' style='display:none'>
+          <h6>Image</h6>
+          <input type="file">
+        </div>
+        <br />
+        <div id='finish' style='display:none'>
+          <h6>Offensive?</h6>
+          <input type="radio" id="OffensiveYES">
+          <label for="OffensiveYES">YES</label>
+          <input type="radio" id="OffensiveNO">
+          <label for="OffensiveNO">NO</label>
+          <br />
+          <input type="submit">
+        </div>
+      </div>
+    </section>
+    <script>
+      function display(type) {
+        var showType = document.getElementById(type);
+        var submitDivs = document.getElementsByClassName("submit");
+        submitDivs[0].style.display = "none";
+        submitDivs[1].style.display = "none";
+        submitDivs[2].style.display = "none";
+        showType.style.display = "block";
+        var finish = document.getElementById("finish");
+        finish.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
