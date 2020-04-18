@@ -46,7 +46,7 @@
           <li class="nav-item active px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="display.html">Joke Display</a>
           </li>
-          <li class="nav-item active px-lg-4">
+          <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="submission.html">Joke Submission</a>
           </li>
           <li class="nav-item px-lg-4">
@@ -67,9 +67,9 @@
       <br/>
       <h6>What type of joke would you like to see?</h6>
       <div class="btn-submission">
-        <button id='URL-btn' onclick="display('URL')">URL</button>
-        <button id='Text-btn' onclick="display('Text')">Text</button>
         <button id='Image-btn' onclick="display('Image')">Image</button>
+        <button id='Text-btn' onclick="display('Text')">Text</button>
+        <button id='URL-btn' onclick="display('URL')">URL</button>
       </div>
       <div class='submit' id='Image' style='display:none'>
         {% for image in images%}
@@ -77,18 +77,15 @@
               <div class="container">
                 <div class="product-item">
                   <div class="product-item-title d-flex">
-                    <div class="bg-faded p-5 d-flex ml-auto rounded">
+                    <div class="bg-faded p-5 d-flex rounded">
                       <h2 class="section-heading mb-0">
                         <span class="section-heading-lower">{{image['title']}}</span>
                       </h2>
                     </div>
                   </div>
-                  <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{team['img']}}" alt="">
-                  <div class="product-item-description d-flex">
-                    <div class="bg-faded p-5 rounded">
-                      <p class="mb-0"><b>Image:</b> {{image['imagePath']}}</p>
-                      <p class="mb-0"><b>Offensive?:</b> {{url['offensive']}}</p>
-                    </div>
+                  <div class="bg-faded p-5 rounded">
+                    <p class="mb-0"><b>Image:</b> {{image['imagePath']}}</p>
+                    <p class="mb-0"><b>Offensive?:</b> {{image['offensive']}}</p>
                   </div>
                 </div>
               </div>
@@ -101,18 +98,15 @@
               <div class="container">
                 <div class="product-item">
                   <div class="product-item-title d-flex">
-                    <div class="bg-faded p-5 d-flex ml-auto rounded">
+                    <div class="bg-faded p-5 d-flex rounded">
                       <h2 class="section-heading mb-0">
                         <span class="section-heading-lower">{{text['title']}}</span>
                       </h2>
                     </div>
                   </div>
-                  <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{team['img']}}" alt="">
-                  <div class="product-item-description d-flex">
-                    <div class="bg-faded p-5 rounded">
-                      <p class="mb-0"><b>Joke:</b> {{text['jokeText']}}</p>
-                      <p class="mb-0"><b>Offensive?:</b> {{url['offensive']}}</p>
-                    </div>
+                  <div class="bg-faded p-5 rounded">
+                    <p class="mb-0"><b>Joke:</b> {{text['jokeText']}}</p>
+                    <p class="mb-0"><b>Offensive?:</b> {{text['offensive']}}</p>
                   </div>
                 </div>
               </div>
@@ -125,19 +119,16 @@
               <div class="container">
                 <div class="product-item">
                   <div class="product-item-title d-flex">
-                    <div class="bg-faded p-5 d-flex ml-auto rounded">
+                    <div class="bg-faded p-5 d-flex rounded">
                       <h2 class="section-heading mb-0">
                         <span class="section-heading-lower">{{url['title']}}</span>
                       </h2>
                     </div>
                   </div>
-                  <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{team['img']}}" alt="">
-                  <div class="product-item-description d-flex">
-                    <div class="bg-faded p-5 rounded">
-                      <p class="mb-0">{{url['link']}}</p>
-                      <p class="mb-0"><b>Description:</b> {{url['description']}}</p>
-                      <p class="mb-0"><b>Offensive?:</b> {{url['offensive']}}</p>
-                    </div>
+                  <div class="bg-faded p-5 rounded">
+                    <p class="mb-0"><a href={{url['link']}}>{{url['title']}}</a></p>
+                    <p class="mb-0"><b>Description:</b> {{url['description']}}</p>
+                    <p class="mb-0"><b>Offensive?:</b> {{url['offensive']}}</p>
                   </div>
                 </div>
               </div>
@@ -156,6 +147,19 @@
   <!-- Bootstrap core JavaScript -->
   <script src="static/vendor/jquery/jquery.min.js"></script>
   <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function display(type) {
+      var showType = document.getElementById(type);
+      var submitDivs = document.getElementsByClassName("submit");
+      submitDivs[0].style.display = "none";
+      submitDivs[1].style.display = "none";
+      submitDivs[2].style.display = "none";
+      showType.style.display = "block";
+      var finish = document.getElementById("finish");
+      finish.style.display = "block";
+    }
+  </script>
 
 </body>
 
