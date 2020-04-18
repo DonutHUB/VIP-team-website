@@ -45,7 +45,7 @@ def contactPage():
         return redirect(url_for('contactPage'))
     return render_template("contact.html", form=form)
 
-@app.route('/submission')
+@app.route('/submission.html')
 def submissionPage():
     return render_template("submission.html")
 
