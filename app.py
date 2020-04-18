@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, flash
 from tools.form import ContactForm
 from tools.data import fullSend
+from tools.display import displayImage, displayText, displayImage
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'you-will-never-guess'
 
@@ -48,6 +49,13 @@ def contactPage():
 @app.route('/submission.html')
 def submissionPage():
     return render_template("submission.html")
+
+@app.route('/display.html')
+def displayPage():
+    images = displayImage()
+    texts = displayText()
+    urls = displayURL()
+    return render_template("display.html", images=images, texts=texts, urls=urls)
 
 if __name__ == "__main__":
 	app.run(debug = True, host='0.0.0.0', port=8080, passthrough_errors=True)
